@@ -1,32 +1,31 @@
 {
-  "name": "node-qunit-phantomjs",
-  "version": "1.2.1",
-  "description": "Run QUnit unit tests in a headless PhantomJS instance without using Grunt.",
+  "name": "node-qunit-phantomjs-istanbul",
+  "version": "1.0.0",
+  "description": "Run QUnit unit tests in a headless PhantomJS instance & write istanbul coverage",
   "main": "index.js",
   "scripts": {
     "test": "gulp test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jonkemp/node-qunit-phantomjs.git"
+    "url": "git://github.com/kmudrick/node-qunit-phantomjs-istanbul.git"
   },
   "keywords": [
     "qunit",
     "phantomjs",
     "test",
-    "testing"
+    "testing",
+    "istanbul"
   ],
-  "author": "Jonathan Kemp <kempdogg@gmail.com> (http://jonkemp.com/)",
+  "author": "Kevin Mudrick <kevin@mudrick.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jonkemp/node-qunit-phantomjs/issues"
+    "url": "https://github.com/kmudrick/node-qunit-phantomjs-istanbul/issues"
   },
-  "homepage": "https://github.com/jonkemp/node-qunit-phantomjs",
+  "homepage": "https://github.com/kmudrick/node-qunit-phantomjs-istanbul",
   "dependencies": {
     "chalk": "^1.0.0",
-    "minimist": "^1.1.0",
-    "phantomjs": "^1.9.12",
-    "qunit-phantomjs-runner": "^2.1.0"
+    "phantomjs": "^1.9.12"
   },
   "devDependencies": {
     "gulp": "^3.8.9",
@@ -34,8 +33,5 @@
     "gulp-mocha": "^2.0.0",
     "mocha": "*",
     "qunitjs": "^1.15.0"
-  },
-  "bin": {
-    "node-qunit-phantomjs": "./bin/node-qunit-phantomjs"
   }
 }

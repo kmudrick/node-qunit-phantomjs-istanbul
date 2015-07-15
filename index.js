@@ -9,27 +9,19 @@ var path = require('path'),
 module.exports = function (filepath, options, callback) {
     var opt = options || {},
         cb = callback || function () {},
-        runner = './node_modules/qunit-phantomjs-runner/runner-json.js';
-
-    if (opt.verbose) {
-        runner = './node_modules/qunit-phantomjs-runner/runner-list.js';
-    }
+        runner = './runner.js';
 
     var absolutePath = path.resolve(filepath),
         isAbsolutePath = absolutePath.indexOf(filepath) >= 0,
         childArgs = [];
-
-    if (opt['phantomjs-options'] && opt['phantomjs-options'].length) {
-        childArgs.push( opt['phantomjs-options'] );
-    }
 
     childArgs.push(
         path.join(__dirname, runner),
         (isAbsolutePath ? 'file:///' + absolutePath.replace(/\\/g, '/') : filepath)
     );
 
-    if ( opt.timeout ) {
-        childArgs.push( opt.timeout );
+    if ( opt.coverageLocation ) {
+        childArgs.push( path.resolve(opt.coverageLocation) );
     }
 
     var proc = childProcess.execFile(binPath, childArgs, function (err, stdout, stderr) {
